@@ -1,17 +1,21 @@
-# Proje Adı
+# Angular Kurumsal Web Projesi
+
 Bu proje, Angular tabanlı bir web uygulamasını geliştirir ve yönetir.
 
 ## Başlangıç
+
 Projeyi çalıştırmadan önce, gerekli modülleri yüklemek için aşağıdaki komutu çalıştırın:
 
 ```
 npm install
 ```
+
 ## Kullanım
 
 Projeyi çalıştırmak için aşağıdaki adımları takip edin:
 
 ### Library Çalıştırma
+
 Library'yi çalıştırmak için:
 
 ```
@@ -49,4 +53,3 @@ Katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) gönderi
 ## Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına başvurun.
-
