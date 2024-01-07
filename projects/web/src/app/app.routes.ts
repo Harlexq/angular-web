@@ -24,6 +24,13 @@ export const routes: Routes = [
           import('./pages/blogs/blogs.component').then((c) => c.BlogsComponent),
       },
       {
+        path: 'blog/:id',
+        loadComponent: () =>
+          import('./pages/blogs/blog-detail/blog-detail.component').then(
+            (c) => c.BlogDetailComponent
+          ),
+      },
+      {
         path: '**',
         loadComponent: () =>
           import('./pages/not-found/not-found.component').then(

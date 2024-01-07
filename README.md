@@ -1,27 +1,52 @@
-# Serhanbakir
+# Proje Adı
+Bu proje, Angular tabanlı bir web uygulamasını geliştirir ve yönetir.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## Başlangıç
+Projeyi çalıştırmadan önce, gerekli modülleri yüklemek için aşağıdaki komutu çalıştırın:
 
-## Development server
+```
+npm install
+```
+## Kullanım
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Projeyi çalıştırmak için aşağıdaki adımları takip edin:
 
-## Code scaffolding
+### Library Çalıştırma
+Library'yi çalıştırmak için:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm run watch
+```
 
-## Build
+### JSON Server Çalıştırma
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+JSON server'ı çalıştırmak için:
 
-## Running unit tests
+```
+npm run json
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Web Arayüzü Çalıştırma
 
-## Running end-to-end tests
+Web arayüzünü başlatmak için:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm run web
+```
 
-## Further help
+### Admin Arayüzü Çalıştırma
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Admin arayüzünü başlatmak için:
+
+```
+npm run admin
+```
+
+## Katkıda Bulunma
+
+Katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) gönderin.
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına başvurun.
+

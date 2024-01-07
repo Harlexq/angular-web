@@ -1,6 +1,6 @@
 <div class="card">
   @for(blog of blogs; track $index) {
-  <a [routerLink]="blog.id" class="card-inner">
+  <a [routerLink]="'/blog/' + blog.id" class="card-inner">
     <img [src]="blog.imageUrl" [alt]="blog.title" class="card-img" />
     <div class="card-info">
       <p>
@@ -13,10 +13,12 @@
       </p>
     </div>
     <div class="card-text">
-      <a [routerLink]="blog.id" class="card-title">{{ blog.title }}</a>
+      <a [routerLink]="'/blog/' + blog.id" class="card-title">{{
+        blog.title
+      }}</a>
     </div>
     <div class="card-footer">
-      <a [routerLink]="blog.id" class="card-route"
+      <a [routerLink]="'/blog/' + blog.id" class="card-route"
         >Devamını Oku <i class="fa-solid fa-angle-right"></i
       ></a>
     </div>
