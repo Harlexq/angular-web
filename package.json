@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "json": "json-server api/db.json",
     "watch": "ng build library --watch --configuration production",
     "web": "ng serve web --o --port 3500",
     "admin": "ng serve admin --o --port 4500"
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .card-inner {
+    flex: 0 1 32%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 3px rgba(52, 58, 64, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(52, 58, 64, 0.15);
+    }
+    .card-img {
+      width: 100%;
+    }
+    .card-info {
+      padding: 10px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 13px;
+        color: #8492a6;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 600;
+      }
+    }
+    .card-text {
+      padding: 0 25px 10px 25px;
+      .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+        transition: 0.3s;
+        position: relative;
+        &:hover {
+          color: #404eed;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+        &::before {
+          content: "";
+          width: 0;
+          height: 2px;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          background-color: #404eed;
+          transition: 0.4s;
+        }
+      }
+    }
+    .card-footer {
+      padding: 0 25px 10px 25px;
+      .card-route {
+        font-size: 16px;
+        font-weight: 600;
+        color: #404eed;
+        transition: 0.4s;
+        &:hover {
+          color: #110f0f;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    .card-inner {
+      flex: 0 1 49%;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .card {
+    .card-inner {
+      flex: 0 1 100%;
+    }
+  }
+}

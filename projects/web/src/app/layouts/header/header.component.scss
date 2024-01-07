@@ -1,0 +1,43 @@
+.header {
+  background-color: #dfdfdf;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    .head-brand {
+      color: #110f0f;
+      h1 {
+        font-size: 25px;
+        line-height: 25px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 20px;
+        text-align: end;
+      }
+    }
+    .nav {
+      .nav-item {
+        padding: 10px;
+        color: #110f0f;
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        &::before {
+          content: "";
+          width: 0;
+          height: 2px;
+          background-color: #110f0f;
+          position: absolute;
+          bottom: 8px;
+          left: 10px;
+          transition: 0.4s;
+        }
+        &:hover::before {
+          width: calc(100% - 20px);
+        }
+      }
+    }
+  }
+}
