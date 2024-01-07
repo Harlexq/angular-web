@@ -48,8 +48,8 @@ npm run admin
 
 ## Katkıda Bulunma
 
-Katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) gönderin.
+Katkıda bulunmak isterseniz, bu repositories'e star ve fork atabilirsiniz.
 
 ## Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına başvurun.
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakınız.
