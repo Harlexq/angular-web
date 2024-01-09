@@ -1,1 +1,11 @@
-<p>blog-detail works!</p>
+@if (blogs != null) {
+<div>
+  <div>
+    <img [src]="blogs.imageUrl" [alt]="blogs.title" />
+  </div>
+  <div>
+    <h2>{{ blogs.title }}</h2>
+    <p>{{ blogs.description }}</p>
+  </div>
+</div>
+}

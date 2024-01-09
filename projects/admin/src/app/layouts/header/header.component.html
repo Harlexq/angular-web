@@ -1,1 +1,29 @@
-<p>header works!</p>
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a routerLink="/" class="head-brand">
+        <img class="logo" src="assets/img/logo.png" alt="" />
+      </a>
+      <nav class="nav">
+        <a routerLink="/" class="nav-item">Dashboard</a>
+        <a routerLink="blogs" class="nav-item">Bloglar</a>
+      </nav>
+      <nav class="head-end">
+        <button class="user" (click)="userContent()">
+          <i class="fa-regular fa-user"></i>
+          {{ "Serhan Bakır" }}
+        </button>
+        <div class="user-content" [ngStyle]="divStyle">
+          <div class="user-body">
+            <i class="fa-regular fa-user"></i>
+            <p class="user-title">{{ "Serhan Bakır" }}</p>
+          </div>
+          <nav class="user-nav">
+            <a routerLink="profile" class="user-nav-item">Profili Düzenle</a>
+            <button class="logout" (click)="logout()">Çıkış Yap</button>
+          </nav>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

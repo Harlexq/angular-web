@@ -1,0 +1,25 @@
+<table class="table">
+  <tr>
+    <th>Blog İd</th>
+    <th>Blog Fotoğrafı</th>
+    <th>Blog Başlığı</th>
+    <th>Blog Yazarı</th>
+    <th>Blog Tarihi</th>
+    <th>Blog Düzenle & Sil</th>
+  </tr>
+  @for(blog of blogs; track $index) {
+  <tr>
+    <td>{{ blog.id }}</td>
+    <td>
+      <img [src]="blog.imageUrl" [alt]="blog.title" />
+    </td>
+    <td>{{ blog.title }}</td>
+    <td>{{ blog.author }}</td>
+    <td>{{ blog.date }}</td>
+    <td>
+      <button class="edit"><i class="fa-regular fa-pen-to-square"></i></button>
+      <button class="clear"><i class="fa-solid fa-trash"></i></button>
+    </td>
+  </tr>
+  }
+</table>

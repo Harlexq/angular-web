@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="login">
+  <h1>Serhan Bakır Admin Panline Hoşgeldiniz</h1>
+  <form class="login-inner" [formGroup]="form" (ngSubmit)="login()">
+    <lib-input-control
+      labelName="E-Mail"
+      [form]="form"
+      placeholder="E-Mail Adresinizi Giriniz"
+      type="email"
+      [formControl]="newEmail"
+    ></lib-input-control>
+    @if(newEmail.invalid && newEmail.dirty) { @if(newEmail.errors?.['required'])
+    {
+    <p class="valid-err">E-Mail Adresi Zorunludur</p>
+    } @if(newEmail.errors?.['email']) {
+    <p class="valid-err">Geçerli Bir E-Mail Adresi Giriniz</p>
+    } }
+    <lib-input-control
+      labelName="Şifre"
+      [form]="form"
+      placeholder="Şifrenizi Giriniz"
+      type="password"
+      [formControl]="newPassword"
+    ></lib-input-control>
+    @if(newPassword.invalid && newPassword.dirty) {
+    @if(newPassword.errors?.['required']) {
+    <p class="valid-err">Şifre Alanı Zorunludur</p>
+    } }
+    <app-main-btn type="submit" [disabled]="!form.valid">
+      Giriş Yap
+    </app-main-btn>
+  </form>
+</div>

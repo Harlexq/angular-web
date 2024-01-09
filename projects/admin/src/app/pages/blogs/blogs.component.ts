@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { CardsComponent } from './cards/cards.component';
-import { PaginationComponent } from '../../../../../library/src/public-api';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [CardsComponent, PaginationComponent],
+  imports: [TableComponent],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.scss',
 })

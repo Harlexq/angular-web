@@ -1,0 +1,35 @@
+.main-btn {
+  background-clip: padding-box;
+  background-color: #404eed;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  transition: all 250ms;
+}
+
+.main-btn:disabled,
+.main-btn:disabled:hover,
+.main-btn:disabled:active {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.main-btn:hover {
+  background-color: #5a67fa;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.main-btn:hover {
+  transform: translateY(-1px);
+}
+
+.main-btn:active {
+  background-color: #3040f7;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}

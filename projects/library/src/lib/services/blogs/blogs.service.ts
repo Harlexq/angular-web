@@ -15,4 +15,8 @@ export class BlogsService {
   postBlogs(model: Blogs, callBack: (res: Blogs) => void) {
     this.http.post('blogs', model, (res) => callBack(res as Blogs));
   }
+
+  getBlogDetail(blogId: any, callBack: (res: Blogs) => void) {
+    this.http.get(`blogs/${blogId}`, (res) => callBack(res as Blogs));
+  }
 }

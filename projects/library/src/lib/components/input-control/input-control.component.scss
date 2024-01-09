@@ -1,0 +1,31 @@
+.form {
+  margin: 0 20px;
+  .label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .input {
+    margin-bottom: 5px;
+    display: block;
+    box-shadow: none;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    color: #343a40;
+    height: 45px;
+    font-size: 13px;
+    border-radius: 6px;
+    transition: all 0.5s ease;
+    padding: 0.375rem 0.75rem;
+    outline: none;
+    width: 100%;
+    &:focus {
+      border-color: #404eed;
+    }
+    &::placeholder {
+      font-size: 13px;
+      color: #343a40;
+    }
+  }
+}

@@ -1,11 +1,24 @@
+import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
+import { AuthService } from '../../_Functionality/services/auth.service';
 
 export const routes: Routes = [
   { path: 'dashboard', pathMatch: 'full', redirectTo: '/' },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./pages/login/login.component').then((c) => c.LoginComponent),
+  },
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./pages/signup/signup.component').then((c) => c.SignupComponent),
+  },
+  {
     path: '',
     loadComponent: () =>
       import('./pages/pages.component').then((c) => c.PagesComponent),
+    canActivateChild: [() => inject(AuthService).checkIsAuth()],
     children: [
       {
         path: '',
@@ -15,9 +28,16 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'login',
+        path: 'blogs',
         loadComponent: () =>
-          import('./pages/login/login.component').then((c) => c.LoginComponent),
+          import('./pages/blogs/blogs.component').then((c) => c.BlogsComponent),
+      },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./pages/dashboard/dashboard.component').then(
+            (c) => c.DashboardComponent
+          ),
       },
       {
         path: '**',

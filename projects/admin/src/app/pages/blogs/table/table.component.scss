@@ -1,0 +1,42 @@
+.table {
+  width: 100%;
+  border: 1px solid #000;
+  tr {
+    border: 1px solid #000;
+    th {
+      text-align: center;
+      border: 1px solid #000;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    td {
+      text-align: center;
+      border: 1px solid #000;
+      font-size: 16px;
+      font-weight: 600;
+      img {
+        width: 75px;
+      }
+      button {
+        margin: 0 10px;
+        cursor: pointer;
+        background-color: #404eed;
+        border: none;
+        padding: 10px;
+        color: #fff;
+        border-radius: 6px;
+        transition: 0.4s;
+        font-size: 15px;
+        &:hover {
+          background-color: #1726d1;
+        }
+        &.clear {
+          background-color: #d42828;
+          &:hover {
+            background-color: #ad0f0f;
+          }
+        }
+      }
+    }
+  }
+}
