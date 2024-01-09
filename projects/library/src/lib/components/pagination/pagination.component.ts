@@ -1,11 +1,5 @@
 import { NgFor } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -15,4 +9,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.scss',
 })
-export class PaginationComponent {}
+export class PaginationComponent {
+  pageNumber: number = 0;
+
+  items = [
+    {
+      id: 1,
+    },
+  ];
+}

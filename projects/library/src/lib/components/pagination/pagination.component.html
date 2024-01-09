@@ -1,0 +1,11 @@
+<nav class="pagination">
+  <button class="pagination-item last" (click)="pageNumber = pageNumber - 1">
+    Önceki
+  </button>
+  @for (item of items; track $index) {
+  <button class="pagination-item">{{ pageNumber }}</button>
+  }
+  <button class="pagination-item first" (click)="pageNumber = pageNumber + 1">
+    Sonraki
+  </button>
+</nav>

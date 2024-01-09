@@ -6,7 +6,7 @@ import { ErrorsService } from '../errors/errors.service';
   providedIn: 'root',
 })
 export class BaseService {
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'http://localhost:5500/';
 
   constructor(private http: HttpClient, private errorsService: ErrorsService) {}
 

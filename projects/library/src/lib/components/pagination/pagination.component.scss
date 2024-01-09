@@ -1,18 +1,31 @@
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 10px;
   margin-top: 20px;
-  button {
-    padding: 5px 10px;
+  .pagination-item {
+    padding: 10px 15px;
     cursor: pointer;
-  }
-  span {
-    padding: 5px 10px;
-    cursor: pointer;
-    &.active {
-      background-color: #007bff;
+    background-color: #e6e6e6;
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    &:hover {
+      background-color: #404eed;
       color: #fff;
+    }
+    &.last {
+      border-radius: 10px 0 0 10px;
+      &:hover {
+        background-color: #6d78f5;
+      }
+    }
+    &.first {
+      border-radius: 0 10px 10px 0;
+      &:hover {
+        background-color: #6d78f5;
+      }
     }
   }
 }

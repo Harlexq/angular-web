@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { BlogsService } from '../../../../../../library/src/public-api';
+import {
+  BlogsService,
+  PaginationComponent,
+} from '../../../../../../library/src/public-api';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, PaginationComponent],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss',
 })
