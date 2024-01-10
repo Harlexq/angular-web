@@ -1,5 +1,7 @@
 <div class="card">
-  @for(blog of blogs; track $index) {
+  @for(blog of blogs | slice : (pagination.currentPage - 1) *
+  pagination.pageSize : pagination.currentPage * pagination.pageSize; track
+  $index) {
   <a [routerLink]="'/blog/' + blog.id" class="card-inner">
     <img [src]="blog.imageUrl" [alt]="blog.title" class="card-img" />
     <div class="card-info">
@@ -26,4 +28,10 @@
   }
 </div>
 
-<lib-pagination></lib-pagination>
+<lib-pagination
+  #pagination
+  [collectionSize]="blogs.length"
+  [pageSize]="9"
+  [firstLastButtons]="true"
+  [maxSize]="2"
+></lib-pagination>

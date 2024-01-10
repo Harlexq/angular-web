@@ -3,13 +3,13 @@ import {
   BlogsService,
   PaginationComponent,
 } from '../../../../../../library/src/public-api';
-import { NgFor } from '@angular/common';
+import { NgFor, SlicePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [NgFor, RouterLink, PaginationComponent],
+  imports: [NgFor, RouterLink, PaginationComponent, SlicePipe],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss',
 })

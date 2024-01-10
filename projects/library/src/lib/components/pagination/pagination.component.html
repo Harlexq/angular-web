@@ -1,11 +1,38 @@
-<nav class="pagination">
-  <button class="pagination-item last" (click)="pageNumber = pageNumber - 1">
-    Önceki
-  </button>
-  @for (item of items; track $index) {
-  <button class="pagination-item">{{ pageNumber }}</button>
-  }
-  <button class="pagination-item first" (click)="pageNumber = pageNumber + 1">
-    Sonraki
-  </button>
+<nav>
+  <ul class="pagination">
+    @if (firstLastButtons) {
+    <li [class]="currentPage === 1 ? 'page-item disabled' : 'page-item'"></li>
+    } @if (nextPreviousButtons) {
+    <li [class]="currentPage === 1 ? 'page-item disabled' : 'page-item'">
+      <button class="page-link" (click)="previous()">Önceki</button>
+    </li>
+    } @for (totalPage of totalPages; track $index) {
+    <ng-container>
+      @if ($index + 1 >= currentPage - maxSize && $index + 1 <= currentPage +
+      maxSize) {
+      <li
+        [class]="currentPage === $index + 1 ? 'page-item active' : 'page-item'"
+      >
+        <button class="page-link" (click)="selectPageNumber($index + 1)">
+          {{ $index + 1 }}
+        </button>
+      </li>
+      }
+    </ng-container>
+    } @if (nextPreviousButtons) {
+    <li
+      [class]="
+        currentPage === totalPages.length ? 'page-item disabled' : 'page-item'
+      "
+    >
+      <button class="page-link" (click)="next()">Sonraki</button>
+    </li>
+    } @if (firstLastButtons) {
+    <li
+      [class]="
+        currentPage === totalPages.length ? 'page-item disabled' : 'page-item'
+      "
+    ></li>
+    }
+  </ul>
 </nav>

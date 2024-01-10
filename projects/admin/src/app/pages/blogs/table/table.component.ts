@@ -26,9 +26,6 @@ export class TableComponent {
   deleteBlog(blogId: any) {
     this.blogsService.deleteBlog(blogId, (res) => {
       window.location.reload();
-      if (res.success) {
-        this.getBlogs();
-      }
     });
   }
 }

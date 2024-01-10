@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 30px;
   .card-inner {
     flex: 0 1 32%;
     transition: all 0.5s ease;
@@ -14,6 +15,7 @@
     }
     .card-img {
       width: 100%;
+      height: 250px;
     }
     .card-info {
       padding: 10px 25px;

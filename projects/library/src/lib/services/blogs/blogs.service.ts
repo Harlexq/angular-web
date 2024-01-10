@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../services';
 import { Blogs } from '../../models/blogs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogsService {
-  constructor(private http: BaseService) {}
+  constructor(private http: BaseService,private httpClient:HttpClient) {}
 
   getBlogs(callBack: (res: Blogs[]) => void) {
     this.http.get('blogs', (res) => callBack(res as Blogs[]));
