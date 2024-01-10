@@ -1,3 +1,4 @@
+@if (blogs.length != 0) {
 <table class="table">
   <tr>
     <th>Blog İd</th>
@@ -17,9 +18,16 @@
     <td>{{ blog.author }}</td>
     <td>{{ blog.date }}</td>
     <td>
-      <button class="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-      <button class="clear"><i class="fa-solid fa-trash"></i></button>
+      <a [routerLink]="'/update-blog/' + blog.id" class="edit"
+        ><i class="fa-regular fa-pen-to-square"></i
+      ></a>
+      <button class="clear" (click)="deleteBlog(blog.id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
     </td>
   </tr>
   }
 </table>
+} @else {
+<h2>Blog Bulunamadı</h2>
+}

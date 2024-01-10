@@ -19,4 +19,12 @@ export class BlogsService {
   getBlogDetail(blogId: any, callBack: (res: Blogs) => void) {
     this.http.get(`blogs/${blogId}`, (res) => callBack(res as Blogs));
   }
+
+  updateBlog(blogId: any, model: Blogs, callBack: (res: Blogs) => void) {
+    this.http.put(`blogs/${blogId}`, model, (res) => callBack(res as Blogs));
+  }
+
+  deleteBlog(blogId: any, callBack: (res: any) => void) {
+    this.http.delete(`blogs/${blogId}`, (res) => callBack(res));
+  }
 }

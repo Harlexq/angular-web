@@ -1,0 +1,51 @@
+<div>
+  <form class="form" [formGroup]="form" (ngSubmit)="update()">
+    <lib-input-control
+      labelName="Blog Başlığı"
+      [form]="form"
+      placeholder="Blog Başlığını Giriniz"
+      [formControl]="newTitle"
+    ></lib-input-control>
+    @if(newTitle.invalid && newTitle.dirty) { @if(newTitle.errors?.['required'])
+    {
+    <p class="valid-err">Blog Başlığı Zorunludur</p>
+    } }
+    <st-editor [config]="config" [formControl]="newDescription"></st-editor>
+    @if(newDescription.invalid && newDescription.dirty) {
+    @if(newDescription.errors?.['required']) {
+    <p class="valid-err">Blog Açıklaması Zorunludur</p>
+    } @if(newDescription.errors?.['minlength']) {
+    <p class="valid-err">Blog Açıklaması En Az 500 Karakter Olmalıdır</p>
+    } }
+    <lib-input-control
+      labelName="Blog Fotoğrafı"
+      [form]="form"
+      placeholder="Blog Fotoğrafı Linki Giriniz"
+      [formControl]="newImageUrl"
+    ></lib-input-control>
+    @if(newImageUrl.invalid && newImageUrl.dirty) {
+    @if(newImageUrl.errors?.['required']) {
+    <p class="valid-err">Blog Fotoğrafı Zorunludur</p>
+    } }
+    <lib-input-control
+      labelName="Blog Yazarı"
+      [form]="form"
+      placeholder="Blog Yazarını Giriniz"
+      [formControl]="newAuthor"
+    ></lib-input-control>
+    @if(newAuthor.invalid && newAuthor.dirty) {
+    @if(newAuthor.errors?.['required']) {
+    <p class="valid-err">Blog Yazarı Zorunludur</p>
+    } }
+    <lib-input-control
+      labelName="Blog Tarihini"
+      [form]="form"
+      placeholder="Blog Tarihini Giriniz"
+      [formControl]="newDate"
+    ></lib-input-control>
+    @if(newDate.invalid && newDate.dirty) { @if(newDate.errors?.['required']) {
+    <p class="valid-err">Blog Tarihi Zorunludur</p>
+    } }
+    <app-main-btn type="submit" [disabled]="!form.valid">Güncelle</app-main-btn>
+  </form>
+</div>

@@ -33,4 +33,26 @@ export class BaseService {
       },
     });
   }
+
+  put(api: string, model: any, callBack: (res: any) => void) {
+    this.http.put(`${this.apiUrl + api}`, model).subscribe({
+      next: (res) => {
+        callBack(res);
+      },
+      error: (err: HttpErrorResponse) => {
+        this.errorsService.errorHandler(err);
+      },
+    });
+  }
+
+  delete(api: string, callBack: (res: any) => void) {
+    this.http.delete(`${this.apiUrl + api}`).subscribe({
+      next: (res) => {
+        callBack(res);
+      },
+      error: (err: HttpErrorResponse) => {
+        this.errorsService.errorHandler(err);
+      },
+    });
+  }
 }

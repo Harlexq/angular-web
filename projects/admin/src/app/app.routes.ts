@@ -33,6 +33,20 @@ export const routes: Routes = [
           import('./pages/blogs/blogs.component').then((c) => c.BlogsComponent),
       },
       {
+        path: 'new-blogs',
+        loadComponent: () =>
+          import('./pages/new-blogs/new-blogs.component').then(
+            (c) => c.NewBlogsComponent
+          ),
+      },
+      {
+        path: 'update-blog/:id',
+        loadComponent: () =>
+          import('./pages/update-blog/update-blog.component').then(
+            (c) => c.UpdateBlogComponent
+          ),
+      },
+      {
         path: 'profile',
         loadComponent: () =>
           import('./pages/dashboard/dashboard.component').then(
