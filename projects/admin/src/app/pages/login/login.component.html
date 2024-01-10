@@ -24,9 +24,16 @@
     @if(newPassword.invalid && newPassword.dirty) {
     @if(newPassword.errors?.['required']) {
     <p class="valid-err">Şifre Alanı Zorunludur</p>
-    } }
+    } } @if (accountErr) {
+    <p class="error-message">{{ accountErr }}</p>
+    } @if (tokenErr) {
+    <p class="error-message">{{ tokenErr }}</p>
+    } @if (passwordErr) {
+    <p class="error-message">{{ passwordErr }}</p>
+    }
     <app-main-btn type="submit" [disabled]="!form.valid">
       Giriş Yap
     </app-main-btn>
+    <a routerLink="/signup" class="sign">Hesap Oluştur</a>
   </form>
 </div>

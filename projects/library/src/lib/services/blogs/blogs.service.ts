@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../services';
-import { Blogs } from '../../class/blogs';
+import { Blogs } from '../../models/blogs';
 
 @Injectable({
   providedIn: 'root',

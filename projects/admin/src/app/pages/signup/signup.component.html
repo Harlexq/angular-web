@@ -1,6 +1,6 @@
 <div class="signup">
   <h1>Kayıt Ol</h1>
-  <form class="signup-inner" [formGroup]="form">
+  <form class="signup-inner" [formGroup]="form" (ngSubmit)="signup()">
     <lib-input-control
       labelName="İsim"
       [form]="form"
@@ -85,9 +85,12 @@
     <p class="valid-err">Şifreniz En Az 8 Karakter Olmalıdır</p>
     } @if(newRePassword.errors?.['maxlength']) {
     <p class="valid-err">Şifreniz En Fazla 16 Karakter Olmalıdır</p>
-    } }
-    <app-main-btn type="submit" (click)="signup()" [disabled]="!form.valid">
+    } } @if (passwordErr) {
+    <p class="error-message">{{ passwordErr }}</p>
+    }
+    <app-main-btn type="submit" [disabled]="!form.valid">
       Kayıt Ol
     </app-main-btn>
+    <a routerLink="/login" class="login">Giriş Yap</a>
   </form>
 </div>

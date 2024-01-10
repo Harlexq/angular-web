@@ -12,12 +12,18 @@ import {
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { MainBtnComponent } from '../../components/main-btn/main-btn.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputControlComponent, NgIf, MainBtnComponent, ReactiveFormsModule],
+  imports: [
+    InputControlComponent,
+    NgIf,
+    MainBtnComponent,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -41,11 +47,17 @@ export class LoginComponent {
     });
   }
 
+  accountErr: string = '';
+  tokenErr: string = '';
+  passwordErr: string = '';
+
   login() {
+    this.resetErrors();
+
     if (this.form.value.email) {
       this.userService.getUser(this.form.value.email, (res) => {
         if (res.length === 0) {
-          console.log('Böyle Bir Hesap Bulunamadı');
+          this.accountErr = 'Böyle Bir Hesap Bulunamadı';
         } else {
           if (res[0].password === this.form.value.password) {
             this.userService.user = res[0];
@@ -55,16 +67,22 @@ export class LoginComponent {
             if (userToken) {
               localStorage.setItem('token', userToken);
             } else {
-              console.log('Token Bulunamadı');
+              this.tokenErr = 'Token Bulunamadı';
             }
 
             this.router.navigateByUrl('/dashboard');
           } else {
-            console.log('Yanlış Şifre');
+            this.passwordErr = 'Yanlış Şifre';
           }
         }
       });
     }
+  }
+
+  resetErrors() {
+    this.accountErr = '';
+    this.tokenErr = '';
+    this.passwordErr = '';
   }
 
   public get newEmail(): FormControl {

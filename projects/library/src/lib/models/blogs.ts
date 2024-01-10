@@ -5,6 +5,6 @@ export class Blogs {
     description: string,
     imageUrl: string,
     author: string,
-    date: Date
+    date: string
   ) {}
 }

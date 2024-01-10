@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogsService } from '../../../../../../library/src/public-api';
 import { NgIf } from '@angular/common';
-import { Blogs } from '../../../../../../library/src/lib/class/blogs';
+import { Blogs } from '../../../../../../library/src/lib/models/blogs';
 
 @Component({
   selector: 'app-blog-detail',

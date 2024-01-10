@@ -13,12 +13,18 @@ import {
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { MainBtnComponent } from '../../components/main-btn/main-btn.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [InputControlComponent, NgIf, MainBtnComponent, ReactiveFormsModule],
+  imports: [
+    InputControlComponent,
+    NgIf,
+    MainBtnComponent,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })
@@ -83,24 +89,25 @@ export class SignupComponent {
         ],
       },
       {
-        validator: this.matchingPasswords('password', 'repassword'),
+        validator: this.matchingPasswords(),
       }
     );
   }
 
-  matchingPasswords(Password: string, ConfirmPassword: string) {
-    return (controls: AbstractControl) => {
-      if (controls) {
-        const Password = controls.get('password')!.value;
-        const ConfirmPassword = controls.get('rePassword')!.value;
+  passwordErr: string = '';
 
-        if (Password !== ConfirmPassword) {
-          controls.get('rePassword')?.setErrors({ not_the_same: true });
+  matchingPasswords(): any {
+    return (group: FormGroup) => {
+      const password = group.controls['password'].value;
+      const confirmPassword = group.controls['rePassword'].value;
 
-          return { mismatchedPassword: true };
-        }
+      if (password !== confirmPassword) {
+        group.controls['rePassword'].setErrors({ not_the_same: true });
+        this.passwordErr = 'Şifreler birbirine uyuşmuyor';
+      } else {
+        group.controls['rePassword'].setErrors(null);
+        this.passwordErr = '';
       }
-      return null;
     };
   }
 
@@ -120,16 +127,15 @@ export class SignupComponent {
   signup() {
     const id = Math.random().toString(36).substr(2, 9);
     const token = this.tokenGenerator(32);
-    localStorage.setItem('token', token);
 
     const formData = {
       id: id,
-      ...this.form.value,
       token: token,
+      ...this.form.value,
     };
 
     this.userService.postUser(formData, (res) => {
-      this.form.setValue(res);
+      this.router.navigateByUrl('/login');
     });
   }
 
