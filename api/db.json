@@ -27,24 +27,13 @@
   ],
   "users": [
     {
-      "id": "vledvan56",
-      "token": "VkdcHzZZP8u6rP8jW1zjtZfL2v6qzgfW",
+      "id": "2rnjuoq6e",
       "firstName": "Serhan",
       "lastName": "Bakır",
       "age": "17",
       "email": "serhanbakir5@gmail.com",
       "password": "123456789",
-      "rePassword": "123456789"
-    },
-    {
-      "id": "sqc82torl",
-      "token": "gjw08NJSZ8kd7utMBLWpZ66gm6BWm1jC",
-      "firstName": "sanane",
-      "lastName": "adamım",
-      "age": "17",
-      "email": "serhanbakir@x.com",
-      "password": "123456789",
-      "rePassword": "123456789"
+      "token": "WMoXBVFlgdGakkPVwq0TYQMwvLoZCUcU"
     }
   ]
 }

@@ -14,6 +14,7 @@ import {
 import { NgIf } from '@angular/common';
 import { MainBtnComponent } from '../../components/main-btn/main-btn.component';
 import { Router, RouterLink } from '@angular/router';
+import { User } from '../../../../../library/src/lib/models/user';
 
 @Component({
   selector: 'app-signup',
@@ -128,10 +129,12 @@ export class SignupComponent {
     const id = Math.random().toString(36).substr(2, 9);
     const token = this.tokenGenerator(32);
 
+    const { rePassword, ...formDataWithoutRePassword } = this.form.value;
+
     const formData = {
       id: id,
       token: token,
-      ...this.form.value,
+      ...formDataWithoutRePassword,
     };
 
     this.userService.postUser(formData, (res) => {

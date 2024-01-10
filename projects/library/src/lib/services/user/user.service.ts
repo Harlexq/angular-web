@@ -10,11 +10,11 @@ export class UserService {
 
   constructor(private http: BaseService) {}
 
-  postUser(data: User, callBack: (res: any) => void) {
-    this.http.post('users', data, callBack);
+  postUser(model: User, callBack: (res: User) => void) {
+    this.http.post('users', model, (res) => callBack(res as User));
   }
 
-  getUser(email: string, callBack: (res: any) => void) {
-    this.http.get(`users?email=${email}`, callBack);
+  getUser(email: string, callBack: (res: User[]) => void) {
+    this.http.get(`users?email=${email}`, (res) => callBack(res as User[]));
   }
 }
