@@ -1,4 +1,4 @@
-# Angular Kurumsal Web Projesi
+# Angular Kurumsal Web Projesi (Geliştirmeye Devam Ediyorum)
 
 Bu proje, Angular tabanlı bir web uygulamasını geliştirir ve yönetir.
 
