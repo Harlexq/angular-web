@@ -8,7 +8,12 @@
     "json": "json-server --port 5500 api/db.json",
     "watch": "ng build library --watch --configuration production",
     "web": "ng serve web --o --port 3500",
-    "admin": "ng serve admin --o --port 4500"
+    "admin": "ng serve admin --o --port 4500",
+    "build-admin": "ng build admin --configuration production",
+    "build-web": "ng build web --configuration production",
+    "build-library": "ng build library --watch",
+    "buildlib": "ng build library",
+    "build-compress": "ng build web --configuration production --optimization=true && gzipper --verbose ./dist"
   },
   "private": true,
   "dependencies": {
