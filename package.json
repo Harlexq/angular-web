@@ -14,7 +14,7 @@
     "build-library": "ng build library --watch",
     "buildlib": "ng build library",
     "build-compress": "ng build web --configuration production --optimization=true && gzipper --verbose ./dist",
-    "build-both": "npm run build-admin && npm run build-web && np run build-library"
+    "build-both": "npm run build-admin && npm run build-web && npm run build-library"
   },
   "private": true,
   "dependencies": {
