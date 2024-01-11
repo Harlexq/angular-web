@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { BlogsService } from '../../../../../../library/src/public-api';
-import { NgFor } from '@angular/common';
+import {
+  BlogsService,
+  PaginationComponent,
+} from '../../../../../../library/src/public-api';
+import { NgFor, SlicePipe } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, PaginationComponent, SlicePipe],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })

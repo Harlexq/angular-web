@@ -8,7 +8,8 @@
     <th>Blog Tarihi</th>
     <th>Blog Düzenle & Sil</th>
   </tr>
-  @for(blog of blogs; track $index) {
+  @for(blog of blogs | slice : (pagination.currentPage - 1) *
+  pagination.pageSize : pagination.currentPage * pagination.pageSize; track $index) {
   <tr>
     <td>{{ blog.id }}</td>
     <td>
@@ -31,3 +32,11 @@
 } @else {
 <h2>Blog Bulunamadı</h2>
 }
+
+<lib-pagination
+  #pagination
+  [collectionSize]="blogs.length"
+  [pageSize]="9"
+  [firstLastButtons]="true"
+  [maxSize]="2"
+></lib-pagination>
