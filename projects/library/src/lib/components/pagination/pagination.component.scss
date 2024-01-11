@@ -14,6 +14,12 @@
       &:hover {
         background-color: #f2f2f2;
       }
+      &:disabled {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #f8f9fa;
+        border-color: #dee2e6;
+      }
     }
     &.active .page-link {
       background-color: #007bff;

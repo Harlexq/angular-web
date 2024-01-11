@@ -15,7 +15,7 @@ export class PaginationComponent {
   @Input() currentPage = 1;
   @Input() maxSize = 2;
   @Input() firstLastButtons = false;
-  @Input() nextPreviousButtons = true;
+  @Input() nextPreviousButton = true;
 
   totalPages: any[] = [];
 
