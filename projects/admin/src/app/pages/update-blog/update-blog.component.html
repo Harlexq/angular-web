@@ -4,7 +4,7 @@
       labelName="Blog Başlığı"
       [form]="form"
       placeholder="Blog Başlığını Giriniz"
-      [formControl]="newTitle"
+      [fc]="newTitle"
     ></lib-input-control>
     @if(newTitle.invalid && newTitle.dirty) { @if(newTitle.errors?.['required'])
     {
@@ -21,7 +21,7 @@
       labelName="Blog Fotoğrafı"
       [form]="form"
       placeholder="Blog Fotoğrafı Linki Giriniz"
-      [formControl]="newImageUrl"
+      [fc]="newImageUrl"
     ></lib-input-control>
     @if(newImageUrl.invalid && newImageUrl.dirty) {
     @if(newImageUrl.errors?.['required']) {
@@ -31,7 +31,7 @@
       labelName="Blog Yazarı"
       [form]="form"
       placeholder="Blog Yazarını Giriniz"
-      [formControl]="newAuthor"
+      [fc]="newAuthor"
     ></lib-input-control>
     @if(newAuthor.invalid && newAuthor.dirty) {
     @if(newAuthor.errors?.['required']) {
@@ -41,7 +41,7 @@
       labelName="Blog Tarihini"
       [form]="form"
       placeholder="Blog Tarihini Giriniz"
-      [formControl]="newDate"
+      [fc]="newDate"
     ></lib-input-control>
     @if(newDate.invalid && newDate.dirty) { @if(newDate.errors?.['required']) {
     <p class="valid-err">Blog Tarihi Zorunludur</p>

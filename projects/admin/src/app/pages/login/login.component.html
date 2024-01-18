@@ -6,7 +6,7 @@
       [form]="form"
       placeholder="E-Mail Adresinizi Giriniz"
       type="email"
-      [formControl]="newEmail"
+      [fc]="newEmail"
     ></lib-input-control>
     @if(newEmail.invalid && newEmail.dirty) { @if(newEmail.errors?.['required'])
     {
@@ -19,7 +19,7 @@
       [form]="form"
       placeholder="Şifrenizi Giriniz"
       type="password"
-      [formControl]="newPassword"
+      [fc]="newPassword"
     ></lib-input-control>
     @if(newPassword.invalid && newPassword.dirty) {
     @if(newPassword.errors?.['required']) {

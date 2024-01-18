@@ -18,5 +18,5 @@ export class InputControlComponent {
   @Input({ required: true }) form!: FormGroup;
   @Input() placeholder: string = '';
   @Input() type?: 'text' | 'password' | 'email' | 'number' = 'text';
-  @Input({ required: true }) formControl: FormControl = new FormControl();
+  @Input({ required: true }) fc: FormControl = new FormControl();
 }

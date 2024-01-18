@@ -1,14 +1,6 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "title": "Yazılım Geliştirme Temelleri",
-      "description": "Yazılım geliştirme sürecinin temel adımları ve yöntemleri.",
-      "imageUrl": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
-      "author": "Ahmet Yılmaz",
-      "date": "2024-01-01"
-    },
-    {
       "id": 2,
       "title": "Yapay Zeka'nın Günlük Hayata Etkisi",
       "description": "Yapay zeka teknolojilerinin günlük yaşamda nasıl bir rol oynadığı.",
@@ -298,6 +290,15 @@
       "email": "serhanbakir5@gmail.com",
       "password": "123456789",
       "token": "WMoXBVFlgdGakkPVwq0TYQMwvLoZCUcU"
+    },
+    {
+      "id": "c2bo8mqon",
+      "token": "QyLETx9sKITI1G5WLMgq1uoguniJBUfC",
+      "firstName": "Serhan",
+      "lastName": "Bakır",
+      "age": "17",
+      "email": "serhanbakir5@gmail.com",
+      "password": "27012701"
     }
   ]
 }

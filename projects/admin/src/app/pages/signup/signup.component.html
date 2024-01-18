@@ -5,7 +5,7 @@
       labelName="İsim"
       [form]="form"
       placeholder="İsminizi Giriniz"
-      [formControl]="newFirstName"
+      [fc]="newFirstName"
     ></lib-input-control>
     @if(newFirstName.invalid && newFirstName.dirty) {
     @if(newFirstName.errors?.['required']) {
@@ -19,7 +19,7 @@
       labelName="Soyisim"
       [form]="form"
       placeholder="Soyisminizi Giriniz"
-      [formControl]="newLastName"
+      [fc]="newLastName"
     ></lib-input-control>
     @if(newLastName.invalid && newLastName.dirty) {
     @if(newLastName.errors?.['required']) {
@@ -33,7 +33,7 @@
       labelName="Yaş"
       [form]="form"
       placeholder="Yaşınızı Giriniz"
-      [formControl]="newAge"
+      [fc]="newAge"
       type="number"
     ></lib-input-control>
     @if(newAge.invalid && newAge.dirty) { @if(newAge.errors?.['required']) {
@@ -43,7 +43,7 @@
       labelName="E-Mail"
       [form]="form"
       placeholder="E-Mail Adresinizi Giriniz"
-      [formControl]="newEmail"
+      [fc]="newEmail"
       type="email"
     ></lib-input-control>
     @if(newEmail.invalid && newEmail.dirty) { @if(newEmail.errors?.['required'])
@@ -60,7 +60,7 @@
       labelName="Şifre"
       [form]="form"
       placeholder="Şifrenizi Giriniz"
-      [formControl]="newPassword"
+      [fc]="newPassword"
       type="password"
     ></lib-input-control>
     @if(newPassword.invalid && newPassword.dirty) {
@@ -75,7 +75,7 @@
       labelName="Tekrar Şifre"
       [form]="form"
       placeholder="Şifrenizi Tekrar Giriniz"
-      [formControl]="newRePassword"
+      [fc]="newRePassword"
       type="password"
     ></lib-input-control>
     @if(newRePassword.invalid && newRePassword.dirty) {
