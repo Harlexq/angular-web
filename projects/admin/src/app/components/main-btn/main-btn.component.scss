@@ -1,6 +1,6 @@
 .main-btn {
   background-clip: padding-box;
-  background-color: #404eed;
+  background-color: #4d61fc;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -9,7 +9,8 @@
   font-size: 16px;
   font-weight: 600;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-  transition: all 250ms;
+  transition: 0.2s;
+  display: block;
 }
 
 .main-btn:disabled,
@@ -17,19 +18,17 @@
 .main-btn:disabled:active {
   background-color: gray;
   cursor: not-allowed;
+  transform: translateY(0px);
 }
 
 .main-btn:hover {
-  background-color: #5a67fa;
+  background-color: #2036de;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
-
-.main-btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .main-btn:active {
   background-color: #3040f7;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  transform: translateY(0);
+  transform: translateY(-2px);
 }

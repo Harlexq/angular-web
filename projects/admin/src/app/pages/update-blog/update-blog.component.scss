@@ -1,5 +1,26 @@
-app-main-btn,
-st-editor {
-  display: block;
-  margin: 15px 20px;
+.update-blog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .update-blog-inner {
+    background-color: #fff;
+    width: 1500px;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 15px 25px;
+    .form {
+      .error-message {
+        font-size: 13px;
+        color: #ff0000;
+        display: block;
+        margin: 4px 0 0;
+        font-weight: 600;
+      }
+      app-main-btn {
+        margin-top: 15px;
+        display: block;
+      }
+    }
+  }
 }

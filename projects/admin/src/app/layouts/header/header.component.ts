@@ -1,6 +1,7 @@
 import { NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { UserService } from '../../../../../library/src/public-api';
 
 @Component({
   selector: 'app-header',
@@ -10,27 +11,50 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  divStyle = {};
-  isStyled = false;
+  divStyle = { display: 'none' };
+  firstName: string = '';
+  lastName: string = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
 
-  userContent() {
-    this.isStyled = !this.isStyled;
+  ngOnInit(): void {
+    this.updateUserName();
+  }
 
-    if (this.isStyled) {
-      this.divStyle = {
-        display: 'block',
-      };
-    } else {
-      this.divStyle = {
-        display: 'none',
-      };
+  @HostListener('document:click', ['$event'])
+  handleDocumentClick(event: Event): void {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.divStyle = { display: 'none' };
     }
+  }
+
+  toggleUserContent(): void {
+    this.divStyle = {
+      display: this.divStyle.display === 'none' ? 'block' : 'none',
+    };
+  }
+
+  stopPropagation(event: Event): void {
+    event.stopPropagation();
   }
 
   logout() {
     this.router.navigateByUrl('/login');
     localStorage.removeItem('token');
+  }
+
+  updateUserName() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.userService.getUserInfo(token, (user) => {
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
+      });
+    }
   }
 }

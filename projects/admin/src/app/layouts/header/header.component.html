@@ -9,14 +9,18 @@
         <a routerLink="blogs" class="nav-item">Bloglar</a>
       </nav>
       <nav class="head-end">
-        <button class="user" (click)="userContent()">
+        <button class="user" (click)="toggleUserContent()">
           <i class="fa-regular fa-user"></i>
-          {{ "Serhan Bakır" }}
+          {{ firstName + " " + lastName }}
         </button>
-        <div class="user-content" [ngStyle]="divStyle">
+        <div
+          class="user-content"
+          [ngStyle]="divStyle"
+          (click)="stopPropagation($event)"
+        >
           <div class="user-body">
             <i class="fa-regular fa-user"></i>
-            <p class="user-title">{{ "Serhan Bakır" }}</p>
+            <p class="user-title">{{ firstName + " " + lastName }}</p>
           </div>
           <nav class="user-nav">
             <a routerLink="profile" class="user-nav-item">Profili Düzenle</a>

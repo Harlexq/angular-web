@@ -1,96 +1,112 @@
 <div class="signup">
-  <h1>Kayıt Ol</h1>
-  <form class="signup-inner" [formGroup]="form" (ngSubmit)="signup()">
-    <lib-input-control
-      labelName="İsim"
-      [form]="form"
-      placeholder="İsminizi Giriniz"
-      [fc]="newFirstName"
-    ></lib-input-control>
-    @if(newFirstName.invalid && newFirstName.dirty) {
-    @if(newFirstName.errors?.['required']) {
-    <p class="valid-err">İsim Alanı Zorunludur</p>
-    } @if(newFirstName.errors?.['minlength']) {
-    <p class="valid-err">İsim Alanı En Az 2 Karakter Olmalıdır</p>
-    } @if(newFirstName.errors?.['maxlength']) {
-    <p class="valid-err">İsim Alanı En Fazla 12 Karakter Olmalıdır</p>
-    } }
-    <lib-input-control
-      labelName="Soyisim"
-      [form]="form"
-      placeholder="Soyisminizi Giriniz"
-      [fc]="newLastName"
-    ></lib-input-control>
-    @if(newLastName.invalid && newLastName.dirty) {
-    @if(newLastName.errors?.['required']) {
-    <p class="valid-err">Soyisim Alanı Zorunludur</p>
-    } @if(newLastName.errors?.['minlength']) {
-    <p class="valid-err">Soyisim Alanı En Az 2 Karakter Olmalıdır</p>
-    } @if(newLastName.errors?.['maxlength']) {
-    <p class="valid-err">Soyisim Alanı En Fazla 12 Karakter Olmalıdır</p>
-    } }
-    <lib-input-control
-      labelName="Yaş"
-      [form]="form"
-      placeholder="Yaşınızı Giriniz"
-      [fc]="newAge"
-      type="number"
-    ></lib-input-control>
-    @if(newAge.invalid && newAge.dirty) { @if(newAge.errors?.['required']) {
-    <p class="valid-err">Yaş Alanı Zorunludur</p>
-    } }
-    <lib-input-control
-      labelName="E-Mail"
-      [form]="form"
-      placeholder="E-Mail Adresinizi Giriniz"
-      [fc]="newEmail"
-      type="email"
-    ></lib-input-control>
-    @if(newEmail.invalid && newEmail.dirty) { @if(newEmail.errors?.['required'])
-    {
-    <p class="valid-err">E-Mail Adresi Zorunludur</p>
-    } @if(newEmail.errors?.['minlength']) {
-    <p class="valid-err">E-Mail Adresi En Az 5 Karakter Olmalıdır</p>
-    } @if(newEmail.errors?.['maxlength']) {
-    <p class="valid-err">E-Mail Adresi En Fazla 50 Karakter Olmalıdır</p>
-    } @if(newEmail.errors?.['email']) {
-    <p class="valid-err">Geçerli Bir E-Mail Adresi Giriniz</p>
-    } }
-    <lib-input-control
-      labelName="Şifre"
-      [form]="form"
-      placeholder="Şifrenizi Giriniz"
-      [fc]="newPassword"
-      type="password"
-    ></lib-input-control>
-    @if(newPassword.invalid && newPassword.dirty) {
-    @if(newPassword.errors?.['required']) {
-    <p class="valid-err">Şifre Alanı Zorunludur</p>
-    } @if(newPassword.errors?.['minlength']) {
-    <p class="valid-err">Şifreniz En Az 8 Karakter Olmalıdır</p>
-    } @if(newPassword.errors?.['maxlength']) {
-    <p class="valid-err">Şifreniz En Fazla 16 Karakter Olmalıdır</p>
-    } }
-    <lib-input-control
-      labelName="Tekrar Şifre"
-      [form]="form"
-      placeholder="Şifrenizi Tekrar Giriniz"
-      [fc]="newRePassword"
-      type="password"
-    ></lib-input-control>
-    @if(newRePassword.invalid && newRePassword.dirty) {
-    @if(newRePassword.errors?.['required']) {
-    <p class="valid-err">Şifre Alanı Zorunludur</p>
-    } @if(newRePassword.errors?.['minlength']) {
-    <p class="valid-err">Şifreniz En Az 8 Karakter Olmalıdır</p>
-    } @if(newRePassword.errors?.['maxlength']) {
-    <p class="valid-err">Şifreniz En Fazla 16 Karakter Olmalıdır</p>
-    } } @if (passwordErr) {
-    <p class="error-message">{{ passwordErr }}</p>
-    }
-    <app-main-btn type="submit" [disabled]="!form.valid">
-      Kayıt Ol
-    </app-main-btn>
-    <a routerLink="/login" class="login">Giriş Yap</a>
-  </form>
+  <div class="signup-inner">
+    <div class="content">
+      <h1 class="title">Kayıt Ol</h1>
+      <div class="auth">
+        <button class="facebook">
+          <i class="fa-brands fa-square-facebook"></i>
+          Facebook
+        </button>
+        <button class="google">
+          <img src="assets/icon/google.webp" />
+          Google
+        </button>
+      </div>
+    </div>
+    <form class="form" [formGroup]="form" (ngSubmit)="signup()">
+      <lib-input-control
+        labelName="İsim"
+        [form]="form"
+        placeholder="İsminizi Giriniz"
+        [fc]="newFirstName"
+      ></lib-input-control>
+      @if(newFirstName.invalid && newFirstName.dirty) {
+      @if(newFirstName.errors?.['required']) {
+      <p class="error-message">İsim Alanı Zorunludur</p>
+      } @if(newFirstName.errors?.['minlength']) {
+      <p class="error-message">İsim Alanı En Az 2 Karakter Olmalıdır</p>
+      } @if(newFirstName.errors?.['maxlength']) {
+      <p class="error-message">İsim Alanı En Fazla 12 Karakter Olmalıdır</p>
+      } }
+      <lib-input-control
+        labelName="Soyisim"
+        [form]="form"
+        placeholder="Soyisminizi Giriniz"
+        [fc]="newLastName"
+      ></lib-input-control>
+      @if(newLastName.invalid && newLastName.dirty) {
+      @if(newLastName.errors?.['required']) {
+      <p class="error-message">Soyisim Alanı Zorunludur</p>
+      } @if(newLastName.errors?.['minlength']) {
+      <p class="error-message">Soyisim Alanı En Az 2 Karakter Olmalıdır</p>
+      } @if(newLastName.errors?.['maxlength']) {
+      <p class="error-message">Soyisim Alanı En Fazla 12 Karakter Olmalıdır</p>
+      } }
+      <lib-input-control
+        labelName="Yaş"
+        [form]="form"
+        placeholder="Yaşınızı Giriniz"
+        [fc]="newAge"
+        type="number"
+      ></lib-input-control>
+      @if(newAge.invalid && newAge.dirty) { @if(newAge.errors?.['required']) {
+      <p class="error-message">Yaş Alanı Zorunludur</p>
+      } }
+      <lib-input-control
+        labelName="E-Mail"
+        [form]="form"
+        placeholder="E-Mail Adresinizi Giriniz"
+        [fc]="newEmail"
+        type="email"
+      ></lib-input-control>
+      @if(newEmail.invalid && newEmail.dirty) {
+      @if(newEmail.errors?.['required']) {
+      <p class="error-message">E-Mail Adresi Zorunludur</p>
+      } @if(newEmail.errors?.['minlength']) {
+      <p class="error-message">E-Mail Adresi En Az 5 Karakter Olmalıdır</p>
+      } @if(newEmail.errors?.['maxlength']) {
+      <p class="error-message">E-Mail Adresi En Fazla 50 Karakter Olmalıdır</p>
+      } @if(newEmail.errors?.['email']) {
+      <p class="error-message">Geçerli Bir E-Mail Adresi Giriniz</p>
+      } }
+      <lib-input-control
+        labelName="Şifre"
+        [form]="form"
+        placeholder="Şifrenizi Giriniz"
+        [fc]="newPassword"
+        type="password"
+      ></lib-input-control>
+      @if(newPassword.invalid && newPassword.dirty) {
+      @if(newPassword.errors?.['required']) {
+      <p class="error-message">Şifre Alanı Zorunludur</p>
+      } @if(newPassword.errors?.['minlength']) {
+      <p class="error-message">Şifreniz En Az 8 Karakter Olmalıdır</p>
+      } @if(newPassword.errors?.['maxlength']) {
+      <p class="error-message">Şifreniz En Fazla 16 Karakter Olmalıdır</p>
+      } }
+      <lib-input-control
+        labelName="Tekrar Şifre"
+        [form]="form"
+        placeholder="Şifrenizi Tekrar Giriniz"
+        [fc]="newRePassword"
+        type="password"
+      ></lib-input-control>
+      @if(newRePassword.invalid && newRePassword.dirty) {
+      @if(newRePassword.errors?.['required']) {
+      <p class="error-message">Şifre Alanı Zorunludur</p>
+      } @if(newRePassword.errors?.['minlength']) {
+      <p class="error-message">Şifreniz En Az 8 Karakter Olmalıdır</p>
+      } @if(newRePassword.errors?.['maxlength']) {
+      <p class="error-message">Şifreniz En Fazla 16 Karakter Olmalıdır</p>
+      } } @if (passwordErr) {
+      <p class="error-message">{{ passwordErr }}</p>
+      }
+      <app-main-btn type="submit" [disabled]="!form.valid">
+        Kayıt Ol
+      </app-main-btn>
+      <p class="sign">
+        Zaten bir hesabın varmı? <a routerLink="/login">Giriş Yap</a>
+      </p>
+    </form>
+  </div>
 </div>

@@ -1,39 +1,57 @@
 <div class="login">
-  <h1>Serhan Bakır Admin Panline Hoşgeldiniz</h1>
-  <form class="login-inner" [formGroup]="form" (ngSubmit)="login()">
-    <lib-input-control
-      labelName="E-Mail"
-      [form]="form"
-      placeholder="E-Mail Adresinizi Giriniz"
-      type="email"
-      [fc]="newEmail"
-    ></lib-input-control>
-    @if(newEmail.invalid && newEmail.dirty) { @if(newEmail.errors?.['required'])
-    {
-    <p class="valid-err">E-Mail Adresi Zorunludur</p>
-    } @if(newEmail.errors?.['email']) {
-    <p class="valid-err">Geçerli Bir E-Mail Adresi Giriniz</p>
-    } }
-    <lib-input-control
-      labelName="Şifre"
-      [form]="form"
-      placeholder="Şifrenizi Giriniz"
-      type="password"
-      [fc]="newPassword"
-    ></lib-input-control>
-    @if(newPassword.invalid && newPassword.dirty) {
-    @if(newPassword.errors?.['required']) {
-    <p class="valid-err">Şifre Alanı Zorunludur</p>
-    } } @if (accountErr) {
-    <p class="error-message">{{ accountErr }}</p>
-    } @if (tokenErr) {
-    <p class="error-message">{{ tokenErr }}</p>
-    } @if (passwordErr) {
-    <p class="error-message">{{ passwordErr }}</p>
-    }
-    <app-main-btn type="submit" [disabled]="!form.valid">
-      Giriş Yap
-    </app-main-btn>
-    <a routerLink="/signup" class="sign">Hesap Oluştur</a>
-  </form>
+  <div class="login-inner">
+    <div class="content">
+      <h1 class="title">Giriş Yap</h1>
+      <div class="auth">
+        <button class="facebook">
+          <i class="fa-brands fa-square-facebook"></i>
+          Facebook
+        </button>
+        <button class="google">
+          <img src="assets/icon/google.webp" />
+          Google
+        </button>
+      </div>
+    </div>
+    <form class="form" [formGroup]="form" (ngSubmit)="login()">
+      <lib-input-control
+        labelName="E-Mail"
+        [form]="form"
+        placeholder="E-Mail Adresinizi Giriniz"
+        type="email"
+        [fc]="newEmail"
+        controlId="email"
+      ></lib-input-control>
+      @if(newEmail.invalid && newEmail.dirty) {
+      @if(newEmail.errors?.['required']) {
+      <p class="error-message">E-Mail Adresi Zorunludur</p>
+      } @if(newEmail.errors?.['email']) {
+      <p class="error-message">Geçerli Bir E-Mail Adresi Giriniz</p>
+      } }
+      <lib-input-control
+        labelName="Şifre"
+        [form]="form"
+        placeholder="Şifrenizi Giriniz"
+        type="password"
+        [fc]="newPassword"
+        controlId="password"
+      ></lib-input-control>
+      @if(newPassword.invalid && newPassword.dirty) {
+      @if(newPassword.errors?.['required']) {
+      <p class="error-message">Şifre Alanı Zorunludur</p>
+      } } @if (accountErr) {
+      <p class="error-message">{{ accountErr }}</p>
+      } @if (tokenErr) {
+      <p class="error-message">{{ tokenErr }}</p>
+      } @if (passwordErr) {
+      <p class="error-message">{{ passwordErr }}</p>
+      }
+      <app-main-btn type="submit" [disabled]="!form.valid">
+        Giriş Yap
+      </app-main-btn>
+      <p class="sign">
+        Bir hesabın yokmu? <a routerLink="/signup">Hesap Oluştur</a>
+      </p>
+    </form>
+  </div>
 </div>

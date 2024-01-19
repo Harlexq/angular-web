@@ -17,4 +17,11 @@ export class UserService {
   getUser(email: string, callBack: (res: User[]) => void) {
     this.http.get(`users?email=${email}`, (res) => callBack(res as User[]));
   }
+
+  getUserInfo(token: string, callBack: (user: User) => void) {
+    this.http.get(`users?token=${token}`, (res) => {
+      const user = res[0] as User;
+      callBack(user);
+    });
+  }
 }

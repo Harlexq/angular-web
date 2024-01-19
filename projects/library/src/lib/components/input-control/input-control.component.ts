@@ -19,4 +19,5 @@ export class InputControlComponent {
   @Input() placeholder: string = '';
   @Input() type?: 'text' | 'password' | 'email' | 'number' = 'text';
   @Input({ required: true }) fc: FormControl = new FormControl();
+  @Input() controlId: string = '';
 }

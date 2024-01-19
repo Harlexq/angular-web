@@ -17,8 +17,8 @@ a {
 }
 
 body {
-  background-color: #f1f1f1;
-  color: #110f0f;
+  background-color: #1f1f1f;
+  color: #f1f1f1;
   font-family: "Poppins", sans-serif;
 }
 
@@ -28,10 +28,12 @@ body {
   margin: 0 auto;
 }
 
-.valid-err {
-  color: red;
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 3px;
-  padding: 0 20px;
+.st-toolbar {
+  background-color: #d4d4d4 !important;
+}
+
+.st-area {
+  color: #1f1f1f;
+  border-top: 1px solid #1f1f1f !important;
+  background-color: #d4d4d4 !important;
 }

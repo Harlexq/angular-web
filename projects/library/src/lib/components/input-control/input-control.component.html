@@ -1,9 +1,10 @@
 <div class="form" [formGroup]="form">
-  <label class="label">{{ labelName }}</label>
+  <label class="label" [for]="controlId">{{ labelName }}</label>
   <input
     [type]="type"
     [placeholder]="placeholder"
     [formControl]="fc"
     class="input"
+    [id]="controlId"
   />
 </div>
